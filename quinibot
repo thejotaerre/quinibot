@@ -88,11 +88,9 @@ async def get_match_prediction(team1, team2):
         response1 = requests.get(API_FOOTBALL_URL + "teams", headers=API_FOOTBALL_HEADERS, params={"search": team1})
         response2 = requests.get(API_FOOTBALL_URL + "teams", headers=API_FOOTBALL_HEADERS, params={"search": team2})
 
-        # Verificamos que la respuesta contenga datos válidos para ambos equipos
         if response1.status_code != 200 or response2.status_code != 200:
             return "No se pudo obtener información sobre los equipos. 😞"
 
-        # Verificamos que el JSON tenga datos válidos para los equipos
         try:
             team1_data = response1.json()['response']
             team2_data = response2.json()['response']
@@ -156,7 +154,7 @@ async def get_match_prediction(team1, team2):
         return f"Lo siento, no pude obtener los datos del partido. 😞 Intenta con otros equipos. Error: {str(e)}"
 
 async def handle_message(update: Update, context: CallbackContext) -> None:
-    """Maneja los mensajes que comienzan con 'Quinibot'."""
+    """Maneja los mensajes que comienzan con 'Quinibot'.""" 
     text = update.message.text
     if text.lower().startswith("quinibot"):
         message_parts = text.split(" ", 1)
@@ -183,3 +181,4 @@ async def main():
 if __name__ == '__main__':
     import asyncio
     asyncio.run(main())  # Usamos asyncio.run() para ejecutar el bot de forma adecuada.
+
