@@ -1,0 +1,4 @@
+Bot para prediccion de partidos!
+SIN ACCENTOS EN LOS NOMBRES DE LOS PARTIDOS!
+Hay que mencionar al bot y seguir esta estrcuctura:
+Ejemplo: Quinibot Barcelona vs Real Madrid
